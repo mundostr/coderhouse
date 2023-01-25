@@ -13,5 +13,5 @@ const test_api = (api_url) => {
     });
 }
 
-const REMOTE_URL = "http://localhost:3030/api/rnd/6";
+const REMOTE_URL = "https://idux.net:3030/api/rnd/6";
 test_api(REMOTE_URL);
