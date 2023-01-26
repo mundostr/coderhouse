@@ -23,21 +23,19 @@ app.use(morgan('combined'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get('/api/rnd/:size', (req, res) => {
+// app.get('/api/rnd/:size', (req, res) => {
+app.get('/api/rnd', (req, res) => {
     let code = '';
-    // Recuperamos el parámetro size desde la URL de la solicitud
-    // We recover the size param from the request URL
-    const size = parseInt(req.params.size) || 3;
     
     // Se genera un código al azar de tamaño "size"
     // Generate random code of "size" size
-    for (let i = 0; i < size; i++) {
+    for (let i = 0; i < 8; i++) {
         code += VALID_CHARS[Math.floor(Math.random() * VALID_CHARS.length)];
     }
 
-    res.status(200).json({ size: size, code: code });
+    res.status(200).json({ size: 8, code: code });
 });
 
 app.listen(APP_PORT, () => {
-    console.log(`API CoderHouse activa en puerto ${APP_PORT}\n`);
+    console.log(`API CoderHouse activa en http://localhost:${APP_PORT}/api\n`);
 });
