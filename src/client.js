@@ -13,5 +13,10 @@ const test_api = (api_url) => {
     });
 }
 
-const REMOTE_URL = "https://idux.net:3030/api/rnd/6";
-test_api(REMOTE_URL);
+const PROTOCOL = "http";
+const API_SERVER = "idux.net";
+const API_PORT = 3030;
+const API_ENDPOINT = "api/rnd/8";
+const REQUEST_URL = `${PROTOCOL}://${API_SERVER}:${API_PORT}/${API_ENDPOINT}`;
+console.log(REQUEST_URL);
+test_api(REQUEST_URL);
