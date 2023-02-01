@@ -1,4 +1,3 @@
 .gitignore
 /node_modules
-server_secure.js
 /_SUPPORT
